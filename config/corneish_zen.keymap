@@ -15,6 +15,13 @@
     key-positions = <KEYPOS>; \
   };
 
+/ {
+  chosen {
+    zmk,matrix_transform = &default_transform;
+    //zmk,matrix_transform = &five_column_transform;
+  };
+};
+
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
@@ -44,7 +51,7 @@
             #binding-cells = <2>;
             tapping_term_ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>; 
+            bindings = <&kp>, <&oiupukp>; 
 	    };
     };
         
