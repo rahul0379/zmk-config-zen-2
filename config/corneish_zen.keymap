@@ -26,24 +26,22 @@
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
 
 / {
-   // combos {
-   //   compatible = "zmk,combos";
+    combos {
+        compatible = "zmk,combos";
 
-   //    COMBO(enter, &kp RET, 19 20)
-   //    COMBO(tab, &kp TAB, 15 16)
-   //    COMBO(esc, &kp ESC, 16 17)
-   //    COMBO(quote, &kp SQT, 18 19)
-   //    COMBO(leftpar, &kp LEFT_PARENTHESIS, 6 7)
-   //    COMBO(rightpar, &kp RIGHT_PARENTHESIS, 7 8)
-   //    COMBO(vimslash, &kp FSLH, 32 33)
-   //    COMBO(question, &kp QMARK, 26 27)
-   //    COMBO(leftbracket, &kp LEFT_BRACKET, 4 16)
-   //    COMBO(rightbracket, &kp RIGHT_BRACKET, 5 17)
-   //    COMBO(leftbrace, &kp LEFT_BRACE, 6 18)
-   //    COMBO(rightbrace, &kp RIGHT_BRACE, 7 19)
-   // };
+        COMBO(leftpar, &kp LEFT_PARENTHESIS, 3 4)
+        COMBO(rightpar, &kp RIGHT_PARENTHESIS, 7 8)
+        COMBO(leftbrace, &kp LEFT_BRACE, 15 16)
+        COMBO(rightbrace, &kp RIGHT_BRACE, 19 20)
+        COMBO(leftbracket, &kp LEFT_BRACKET, 27 28)
+        COMBO(rightbracket, &kp RIGHT_BRACKET, 31 32)
+        COMBO(capsword, &caps_word, 12 23)
+    };
 
     behaviors {
         hm: homerow_mods {
@@ -53,7 +51,7 @@
             tapping_term_ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>; 
-	    };
+        };
     };
 
     keymap {
@@ -69,7 +67,7 @@
         // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
              &none         &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &none
         // ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┤─────────────╯
-                                                         &mo MED     &kp DEL      &lt NAV SPACE      &lt SYM RET   &sl NUM       &sl FUN
+                                                         &mo MED     &kp DEL      &lt NAV SPACE      &lt SYM RET   &mo NUM       &mo FUN
         //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
             >;
         };
@@ -129,7 +127,7 @@
         // ├─────────────├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤─────────────┤
              &bt BT_CLR    &trans        &trans        &trans        &trans        &trans            &kp C_VOL_DN  &kp C_BRI_DN  &trans        &trans        &trans        &trans 
         // ╰─────────────┴─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────┤─────────────╯
-                                                       &trans        &trans	   &trans            &kp C_PREV    &kp C_PP      &kp C_NEXT   
+                                                       &trans        &trans	       &trans            &kp C_PREV    &kp C_PP      &kp C_NEXT   
         //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
             >;
         };
