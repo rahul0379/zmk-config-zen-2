@@ -37,7 +37,6 @@
         COMBO(capsword, &caps_word, 12 23)
     };
 
-
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
